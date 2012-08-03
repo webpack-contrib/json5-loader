@@ -1,0 +1,16 @@
+{
+	"name": "json5-loader",
+	"version": "0.1.1",
+	"author": "Tobias Koppers @sokra",
+	"description": "json5 loader module for webpack",
+	"dependencies": {
+		"json5": "0.1.x"
+	},
+	"licenses": [
+		{
+			"type": "MIT",
+			"url": "http://www.opensource.org/licenses/mit-license.php"
+		}
+	],
+	"license": "MIT"
+}
