@@ -4,7 +4,7 @@
 	"author": "Tobias Koppers @sokra",
 	"description": "json5 loader module for webpack",
 	"peerDependencies": {
-		"json5": ">= 0.2.0 < 0.5"
+		"json5": ">= 0.2.0 <= 0.5"
 	},
 	"licenses": [
 		{
