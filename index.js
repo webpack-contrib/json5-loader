@@ -3,7 +3,7 @@
   Author Tobias Koppers @sokra
 */
 var JSON5 = require('json5');
-module.exports = function Json5Plugin (source) {
+function Json5Plugin (source) {
   if (this.cacheable) {
     this.cacheable();
   }
@@ -20,3 +20,7 @@ module.exports = function Json5Plugin (source) {
 
   return 'module.exports = ' + JSON.stringify(value, null, '\t');
 }
+// es2015 modules support
+Json5Plugin.default = Json5Plugin;
+
+module.exports = Json5Plugin;
