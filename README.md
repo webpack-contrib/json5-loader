@@ -19,17 +19,61 @@
 <h2 align="center">Install</h2>
 
 ```sh
-$ npm i -D json5-loader
+$ npm i --save-dev json5-loader
 ```
 
 <h2 align="center">Usage</h2>
 
+You can use the loader either
+ * by configuring the `json5-loader` in the `module.loaders` object of the webpack configuration, or
+ * by directly using the `json5!` prefix to the require statement.
+
+Suppose we have the following `json5` file
 ```js
-var json = require("json5!./file.json5");
-// => returns file.json5 content as json parsed object
+// appData.json5
+{
+  env: 'production',
+  passwordStregth: 'strong'
+}
 ```
 
-Don't forget to polyfill require if you want to use it in node. See webpack documentation.
+#### Usage with preconfigured loader
+
+```js
+// webpack.config.js
+module.exports = {
+  entry: './index.js',
+  output: { /* ... */ },
+  module: {
+    loaders: [
+      {
+        // make all files ending in .json5 use the `json5-loader`
+        test: /\.json5$/,
+        loader: 'json5-loader'
+      }
+    ]
+  }
+}
+```
+
+```js
+// index.js
+var appConfig = require('./appData.json5')
+// or, in ES6
+// import appConfig from './appData.json5'
+
+console.log(appConfig.env) // 'production'
+```
+#### Usage with require statement loader prefix
+```js
+var appConfig = require("json5!./appData.json5")
+// returns the content as json parsed object
+
+console.log(appConfig.env) // 'production'
+```
+
+Don't forget to polyfill require if you want to use it in Node.js. See the webpack documentation.
+
 <h2 align="center">Maintainers</h2>
 
 <table>
