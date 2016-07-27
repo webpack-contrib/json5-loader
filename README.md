@@ -19,7 +19,7 @@
 <h2 align="center">Install</h2>
 
 ```sh
-$ npm i --save-dev json5-loader
+$ npm install --save-dev json5-loader
 ```
 
 <h2 align="center">Usage</h2>
