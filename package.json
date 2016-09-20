@@ -1,6 +1,6 @@
 {
   "name": "json5-loader",
-  "version": "0.6.0",
+  "version": "1.0.0",
   "author": "Tobias Koppers @sokra",
   "description": "json5 loader module for webpack",
   "dependencies": {
