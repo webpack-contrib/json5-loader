@@ -116,6 +116,12 @@ Don't forget to polyfill require if you want to use it in Node.js. See the webpa
         <br />
         <a href="https://github.com/">Kent C. Dodds</a>
       </td>
+      <td align="center">
+        <img width="150" height="150"
+        src="https://avatars.githubusercontent.com/stevelacy?v=3">
+        <br />
+        <a href="https://github.com/stevelacy">Steve Lacy</a>
+      </td>
     <tr>
   <tbody>
 </table>
