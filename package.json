@@ -1,15 +1,17 @@
 {
-	"name": "json5-loader",
-	"version": "0.6.0",
-	"author": "Tobias Koppers @sokra",
-	"description": "json5 loader module for webpack",
-	"peerDependencies": {
-		"json5": ">= 0.2.0 <= 0.5"
-	},
-	"licenses": [
-		{
-			"type": "MIT",
-			"url": "http://www.opensource.org/licenses/mit-license.php"
-		}
-	]
+  "name": "json5-loader",
+  "version": "1.0.0",
+  "author": "Tobias Koppers @sokra",
+  "description": "json5 loader module for webpack",
+  "dependencies": {
+    "json5": "^0.5.0"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "^3.0.2",
+    "should": "^11.1.0"
+  },
+  "scripts": {
+    "test": "mocha test/*.js"
+  }
 }
