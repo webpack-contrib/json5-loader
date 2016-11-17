@@ -66,7 +66,7 @@ console.log(appConfig.env) // 'production'
 ```
 #### Usage with require statement loader prefix
 ```js
-var appConfig = require("json5!./appData.json5")
+var appConfig = require("json5-loader!./appData.json5")
 // returns the content as json parsed object
 
 console.log(appConfig.env) // 'production'
