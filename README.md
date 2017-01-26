@@ -83,24 +83,24 @@ Don't forget to polyfill require if you want to use it in Node.js. See the webpa
         <img width="150 height="150"
         src="https://avatars.githubusercontent.com/sokra?v=3">
         <br />
-        <a href="https://github.com/">Tobias Koppers</a>
+        <a href="https://github.com/sokra">Tobias Koppers</a>
       </td>
       <td align="center">
         <img width="150 height="150"
         src="https://avatars.githubusercontent.com/gdi2290?v=3">
         <br />
-        <a href="https://github.com/">PatrickJS</a>
+        <a href="https://github.com/gdi2290">PatrickJS</a>
       </td>
       <td align="center">
         <img width="150" height="150" src="https://avatars.githubusercontent.com/Cellule?v=3">
         <br />
-        <a href="https://github.com/">Michael Ferris</a>
+        <a href="https://github.com/Cellule">Michael Ferris</a>
       </td>
       <td align="center">
         <img width="150" height="150"
         src="https://avatars.githubusercontent.com/kmck?v=3">
         <br />
-        <a href="https://github.com/">Keith McKnight</a>
+        <a href="https://github.com/kmck">Keith McKnight</a>
       </td>
     </tr>
     <tr>
@@ -108,13 +108,13 @@ Don't forget to polyfill require if you want to use it in Node.js. See the webpa
         <img width="150" height="150"
         src="https://avatars.githubusercontent.com/radubrehar?v=3">
         <br />
-        <a href="https://github.com/">Radu Brehar</a>
+        <a href="https://github.com/radubrehar">Radu Brehar</a>
       </td>
       <td align="center">
         <img width="150" height="150"
         src="https://avatars.githubusercontent.com/kentcdodds?v=3">
         <br />
-        <a href="https://github.com/">Kent C. Dodds</a>
+        <a href="https://github.com/kentcdodds">Kent C. Dodds</a>
       </td>
       <td align="center">
         <img width="150" height="150"
