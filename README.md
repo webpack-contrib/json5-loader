@@ -128,7 +128,7 @@ Don't forget to polyfill require if you want to use it in Node.js. See the webpa
 
 <h2 align="center">LICENSE</h2>
 
-#### [MIT](./LICENSE)
+MIT
 
 [npm]: https://img.shields.io/npm/v/json-loader.svg
 [npm-url]: https://npmjs.com/package/json-loader
