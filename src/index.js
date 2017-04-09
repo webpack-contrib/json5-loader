@@ -5,19 +5,13 @@
 import JSON5 from 'json5';
 
 function Json5Loader(source) {
-  if (this.cacheable) {
-    this.cacheable();
-  }
-
   let value;
 
   try {
     value = JSON5.parse(source);
   } catch (e) {
-    throw new Error('Error using JSON5 parsing');
+    throw new Error('Error parsing JSON5', (e));
   }
-
-  this.values = [value];
 
   return `module.exports = ${JSON.stringify(value, null, '\t')}`;
 }

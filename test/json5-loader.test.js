@@ -15,19 +15,11 @@ describe(PROJECT_NAME, () => {
     done();
   });
 
-  test('should fire cacheable', (done) => {
-    const cacheable = () => {
-      done();
-    };
-    const content = Json5Loader.call({ cacheable }, staticJson5);
-    expect(content).toBe('module.exports = {\n\t"name": "test"\n}');
-  });
-
   test('should catch invalid JSON5', (done) => {
     const brokenJson5 = '{broken: json5}';
     expect(() => {
       Json5Loader.call({}, brokenJson5);
-    }).toThrow('Error using JSON5 parsing');
+    }).toThrow('Error parsing JSON5');
     done();
   });
 });
