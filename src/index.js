@@ -4,7 +4,7 @@
 */
 import JSON5 from 'json5';
 
-function Json5Plugin(source) {
+function Json5Loader(source) {
   if (this.cacheable) {
     this.cacheable();
   }
@@ -22,4 +22,4 @@ function Json5Plugin(source) {
   return `module.exports = ${JSON.stringify(value, null, '\t')}`;
 }
 
-export default Json5Plugin;
+export default Json5Loader;
