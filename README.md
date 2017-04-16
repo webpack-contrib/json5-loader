@@ -13,7 +13,7 @@
       src="https://worldvectorlogo.com/logos/webpack.svg">
   </a>
   <h1>JSON5 Loader</h1>
-  <p>Webpack loader for parsing <code>json5</code> files into JavaScript objects.<p>
+  <p>Webpack loader for parsing <a href="http://json5.org/"><code>json5</code></a> files into JavaScript objects.<p>
 </div>
 
 <h2 align="center">Install</h2>
