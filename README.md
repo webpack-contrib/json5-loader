@@ -13,7 +13,7 @@
       src="https://worldvectorlogo.com/logos/webpack.svg">
   </a>
   <h1>JSON5 Loader</h1>
-  <p>Webpack loader for parsing <a href="http://json5.org/"><code>json5</code></a> files into JavaScript objects.<p>
+  <p>A webpack loader for parsing <a href="http://json5.org/"><code>json5</code></a> files into JavaScript objects.<p>
 </div>
 
 <h2 align="center">Install</h2>
@@ -26,7 +26,7 @@ $ npm install --save-dev json5-loader
 
 You can use the loader either
  * by configuring the `json5-loader` in the `module.loaders` object of the webpack configuration, or
- * by directly using the `json5!` prefix to the require statement.
+ * by directly using the `json5-loader!` prefix to the require statement.
 
 Suppose we have the following `json5` file
 ```js
