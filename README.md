@@ -80,13 +80,13 @@ Don't forget to polyfill require if you want to use it in Node.js. See the webpa
   <tbody>
     <tr>
       <td align="center">
-        <img width="150 height="150"
+        <img width="150" height="150"
         src="https://avatars.githubusercontent.com/sokra?v=3">
         <br />
         <a href="https://github.com/sokra">Tobias Koppers</a>
       </td>
       <td align="center">
-        <img width="150 height="150"
+        <img width="150" height="150"
         src="https://avatars.githubusercontent.com/gdi2290?v=3">
         <br />
         <a href="https://github.com/gdi2290">PatrickJS</a>
@@ -122,8 +122,8 @@ Don't forget to polyfill require if you want to use it in Node.js. See the webpa
         <br />
         <a href="https://github.com/stevelacy">Steve Lacy</a>
       </td>
-    <tr>
-  <tbody>
+    </tr>
+  </tbody>
 </table>
 
 <h2 align="center">LICENSE</h2>
