@@ -142,5 +142,5 @@ MIT
 [test]: http://img.shields.io/travis/webpack-contrib/json5-loader.svg
 [test-url]: https://travis-ci.org/webpack-contrib/json5-loader
 
-[cover]: https://coveralls.io/repos/github/webpack-contrib/json-loader/badge.svg?branch=master
-[cover-url]: https://coveralls.io/github/webpack-contrib/json-loader?branch=master
+[cover]: https://codecov.io/gh/webpack-contrib/json5-loader/branch/master/graph/badge.svg
+[cover-url]: https://codecov.io/gh/webpack-contrib/json5-loader
