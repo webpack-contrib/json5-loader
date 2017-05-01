@@ -1,6 +1,6 @@
 {
   "name": "json5-loader",
-  "version": "1.0.1",
+  "version": "2.0.0-beta.0",
   "author": "Tobias Koppers @sokra",
   "description": "json5 loader module for webpack",
   "main": "dist/cjs.js",
