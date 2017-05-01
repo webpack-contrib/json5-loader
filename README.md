@@ -130,17 +130,17 @@ Don't forget to polyfill require if you want to use it in Node.js. See the webpa
 
 MIT
 
-[npm]: https://img.shields.io/npm/v/json-loader.svg
-[npm-url]: https://npmjs.com/package/json-loader
+[npm]: https://img.shields.io/npm/v/json5-loader.svg
+[npm-url]: https://npmjs.com/package/json5-loader
 
-[deps]: https://david-dm.org/webpack-contrib/json-loader.svg
-[deps-url]: https://david-dm.org/webpack-contrib/json-loader
+[deps]: https://david-dm.org/webpack-contrib/json5-loader.svg
+[deps-url]: https://david-dm.org/webpack-contrib/json5-loader
 
 [chat]: https://img.shields.io/badge/gitter-webpack%2Fwebpack-brightgreen.svg
 [chat-url]: https://gitter.im/webpack/webpack
 
-[test]: http://img.shields.io/travis/webpack-contrib/json-loader.svg
-[test-url]: https://travis-ci.org/webpack-contrib/json-loader
+[test]: http://img.shields.io/travis/webpack-contrib/json5-loader.svg
+[test-url]: https://travis-ci.org/webpack-contrib/json5-loader
 
 [cover]: https://coveralls.io/repos/github/webpack-contrib/json-loader/badge.svg?branch=master
 [cover-url]: https://coveralls.io/github/webpack-contrib/json-loader?branch=master
