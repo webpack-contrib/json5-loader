@@ -133,14 +133,14 @@ MIT
 [npm]: https://img.shields.io/npm/v/json-loader.svg
 [npm-url]: https://npmjs.com/package/json-loader
 
-[deps]: https://david-dm.org/webpack/json-loader.svg
-[deps-url]: https://david-dm.org/webpack/json-loader
+[deps]: https://david-dm.org/webpack-contrib/json-loader.svg
+[deps-url]: https://david-dm.org/webpack-contrib/json-loader
 
 [chat]: https://img.shields.io/badge/gitter-webpack%2Fwebpack-brightgreen.svg
 [chat-url]: https://gitter.im/webpack/webpack
 
-[test]: http://img.shields.io/travis/webpack/json-loader.svg
-[test-url]: https://travis-ci.org/webpack/json-loader
+[test]: http://img.shields.io/travis/webpack-contrib/json-loader.svg
+[test-url]: https://travis-ci.org/webpack-contrib/json-loader
 
-[cover]: https://coveralls.io/repos/github/webpack/json-loader/badge.svg?branch=master
-[cover-url]: https://coveralls.io/github/webpack/json-loader?branch=master
+[cover]: https://coveralls.io/repos/github/webpack-contrib/json-loader/badge.svg?branch=master
+[cover-url]: https://coveralls.io/github/webpack-contrib/json-loader?branch=master
