@@ -28,4 +28,10 @@ describe(PROJECT_NAME, () => {
     expect(content).toBe('module.exports = { to: Infinity }');
     done();
   });
+
+  test('should preserve NaN', (done) => {
+    const content = Json5Loader.call({}, '{nan : NaN}');
+    expect(content).toBe('module.exports = { nan: NaN }');
+    done();
+  });
 });
