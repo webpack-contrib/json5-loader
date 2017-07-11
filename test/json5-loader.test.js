@@ -22,4 +22,10 @@ describe(PROJECT_NAME, () => {
     }).toThrow('Error parsing JSON5');
     done();
   });
+
+  test('should preserve Infinity', (done) => {
+    const content = Json5Loader.call({}, '{to : Infinity}');
+    expect(content).toBe('module.exports = { to: Infinity }');
+    done();
+  });
 });
