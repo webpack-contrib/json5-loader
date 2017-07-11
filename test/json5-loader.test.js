@@ -11,7 +11,7 @@ describe(PROJECT_NAME, () => {
 
   test('should convert to requires', (done) => {
     const content = Json5Loader.call({}, staticJson5);
-    expect(content).toBe('module.exports = {\n\t"name": "test"\n}');
+    expect(content).toBe('module.exports = { name: \'test\' }');
     done();
   });
 
