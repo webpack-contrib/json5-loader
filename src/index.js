@@ -2,6 +2,8 @@
   MIT License http://www.opensource.org/licenses/mit-license.php
   Author Tobias Koppers @sokra
 */
+
+import util from 'util';
 import JSON5 from 'json5';
 
 function Json5Loader(source) {
@@ -13,7 +15,7 @@ function Json5Loader(source) {
     throw new Error('Error parsing JSON5', (e));
   }
 
-  return `module.exports = ${JSON.stringify(value, null, '\t')}`;
+  return `module.exports = ${util.inspect(value, { depth: null })}`;
 }
 
 export default Json5Loader;

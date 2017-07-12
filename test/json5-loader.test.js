@@ -11,7 +11,7 @@ describe(PROJECT_NAME, () => {
 
   test('should convert to requires', (done) => {
     const content = Json5Loader.call({}, staticJson5);
-    expect(content).toBe('module.exports = {\n\t"name": "test"\n}');
+    expect(content).toBe('module.exports = { name: \'test\' }');
     done();
   });
 
@@ -20,6 +20,18 @@ describe(PROJECT_NAME, () => {
     expect(() => {
       Json5Loader.call({}, brokenJson5);
     }).toThrow('Error parsing JSON5');
+    done();
+  });
+
+  test('should preserve Infinity', (done) => {
+    const content = Json5Loader.call({}, '{to : Infinity}');
+    expect(content).toBe('module.exports = { to: Infinity }');
+    done();
+  });
+
+  test('should preserve NaN', (done) => {
+    const content = Json5Loader.call({}, '{nan : NaN}');
+    expect(content).toBe('module.exports = { nan: NaN }');
     done();
   });
 });
