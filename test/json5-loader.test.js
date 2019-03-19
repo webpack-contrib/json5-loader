@@ -19,7 +19,7 @@ describe(PROJECT_NAME, () => {
     const brokenJson5 = '{broken: json5}';
     expect(() => {
       Json5Loader.call({}, brokenJson5);
-    }).toThrow('Error parsing JSON5');
+    }).toThrow(SyntaxError);
     done();
   });
 
