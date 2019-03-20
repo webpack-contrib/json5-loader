@@ -7,7 +7,13 @@ import util from 'util';
 import JSON5 from 'json5';
 
 function Json5Loader(source) {
-  const value = JSON5.parse(source);
+  let value;
+
+  try {
+    value = JSON5.parse(source);
+  } catch (e) {
+    this.emitError(e);
+  }
 
   return `module.exports = ${util.inspect(value, { depth: null })}`;
 }

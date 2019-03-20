@@ -15,11 +15,14 @@ describe(PROJECT_NAME, () => {
     done();
   });
 
-  test('should catch invalid JSON5', (done) => {
+  test('should handle invalid JSON5', (done) => {
     const brokenJson5 = '{broken: json5}';
-    expect(() => {
-      Json5Loader.call({}, brokenJson5);
-    }).toThrow(SyntaxError);
+    const emitError = jest.fn();
+
+    Json5Loader.call({
+      emitError,
+    }, brokenJson5);
+    expect(emitError).toHaveBeenCalledWith(expect.any(SyntaxError));
     done();
   });
 
