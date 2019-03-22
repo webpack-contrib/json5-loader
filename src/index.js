@@ -12,7 +12,7 @@ function Json5Loader(source) {
   try {
     value = JSON5.parse(source);
   } catch (e) {
-    throw new Error('Error parsing JSON5', (e));
+    this.emitError(e);
   }
 
   return `module.exports = ${util.inspect(value, { depth: null })}`;
