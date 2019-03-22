@@ -4,18 +4,26 @@
 */
 
 import util from 'util';
+
 import JSON5 from 'json5';
 
-function Json5Loader(source) {
+import { getOptions } from 'loader-utils';
+import validateOptions from 'schema-utils';
+
+import schema from './options.json';
+
+export default function loader(source) {
+  const options = getOptions(this) || {};
+
+  validateOptions(schema, options, 'Loader');
+
   let value;
 
   try {
     value = JSON5.parse(source);
-  } catch (e) {
-    this.emitError(e);
+  } catch (error) {
+    this.emitError(error);
   }
 
   return `module.exports = ${util.inspect(value, { depth: null })}`;
 }
-
-export default Json5Loader;

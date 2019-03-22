@@ -1,32 +1,40 @@
 sudo: false
-language: node_js
+git:
+  depth: 10
 branches:
   only:
     - master
+    - next
+language: node_js
+cache:
+  directories:
+    - $HOME/.npm
+    - node_modules
 matrix:
-  fast_finish: true
   include:
-    - os: linux
-      node_js: '7'
-      env: WEBPACK_VERSION="2.2.0" JOB_PART=lint
-    - os: linux
-      node_js: '4.3'
-      env: WEBPACK_VERSION="2.2.0" JOB_PART=test
-    - os: linux
-      node_js: '6'
-      env: WEBPACK_VERSION="2.2.0" JOB_PART=test
-    - os: linux
-      node_js: '7'
-      env: WEBPACK_VERSION="2.2.0" JOB_PART=coverage
+    - node_js: '11'
+      script: npm run ci:lint
+      env: JOB_PART=lint
+    - node_js: '11'
+      script: npm run ci:coverage
+      env: JOB_PART=coverage
+    - node_js: '10'
+      script: npm run ci:test
+      env: JOB_PART=test
+    - node_js: '8'
+      script: npm run ci:test
+      env: JOB_PART=test
+    - node_js: '6'
+      script: npm run ci:test
+      env: JOB_PART=test
 before_install:
-  - nvm --version
-  - node --version
+  - npm install -g npm@latest
+install:
+  - npm ci
 before_script:
-  - |-
-    if [ "$WEBPACK_VERSION" ]; then
-      yarn add webpack@^$WEBPACK_VERSION
-    fi
+  - node --version
+  - npm --version
 script:
-  - 'yarn run travis:$JOB_PART'
+  - npm run ci:$JOB_PART
 after_success:
-  - 'bash <(curl -s https://codecov.io/bash)'
+  - if [ "$JOB_PART" = "coverage" ]; then bash <(curl -s https://codecov.io/bash); fi
