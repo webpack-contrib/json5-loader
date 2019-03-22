@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`loader should handle valid JSON5 1`] = `"module.exports = {unquoted:'and you can quote me on that',singleQuotes:'I can use \\"double quotes\\" here',lineBreaks:\\"Look, Mom! No \\\\\\\\n's!\\",hexadecimal:912559,leadingDecimalPoint:0.8675309,andTrailing:8675309,positiveSign:1,trailingComma:'in objects',andIn:['arrays'],backwardsCompatible:'with JSON'}"`;
+
+exports[`loader should invalid characters 1`] = `"module.exports = {foo:'\\\\u2028\\\\u2029'}"`;
+
+exports[`loader should preserve -Infinity 1`] = `"module.exports = {to:-Infinity}"`;
+
+exports[`loader should preserve Infinity 1`] = `"module.exports = {to:Infinity}"`;
+
+exports[`loader should preserve NaN 1`] = `"module.exports = {nan:NaN}"`;
+
+exports[`loader should preserve null 1`] = `"module.exports = {null:null}"`;
