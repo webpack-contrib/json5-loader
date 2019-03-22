@@ -1,17 +1,16 @@
-import { name as PROJECT_NAME } from '../package.json';
-import Json5Loader from '../src';
+import loader from '../src';
 
 const staticJson5 = "{name: 'test'}";
 
-describe(PROJECT_NAME, () => {
+describe('loader', () => {
   test('should export the loader', (done) => {
-    expect(Json5Loader).toBeInstanceOf(Function);
+    expect(loader).toBeInstanceOf(Function);
     done();
   });
 
   test('should convert to requires', (done) => {
-    const content = Json5Loader.call({}, staticJson5);
-    expect(content).toBe('module.exports = { name: \'test\' }');
+    const content = loader.call({}, staticJson5);
+    expect(content).toBe("module.exports = { name: 'test' }");
     done();
   });
 
@@ -19,21 +18,24 @@ describe(PROJECT_NAME, () => {
     const brokenJson5 = '{broken: json5}';
     const emitError = jest.fn();
 
-    Json5Loader.call({
-      emitError,
-    }, brokenJson5);
+    loader.call(
+      {
+        emitError,
+      },
+      brokenJson5
+    );
     expect(emitError).toHaveBeenCalledWith(expect.any(SyntaxError));
     done();
   });
 
   test('should preserve Infinity', (done) => {
-    const content = Json5Loader.call({}, '{to : Infinity}');
+    const content = loader.call({}, '{to : Infinity}');
     expect(content).toBe('module.exports = { to: Infinity }');
     done();
   });
 
   test('should preserve NaN', (done) => {
-    const content = Json5Loader.call({}, '{nan : NaN}');
+    const content = loader.call({}, '{nan : NaN}');
     expect(content).toBe('module.exports = { nan: NaN }');
     done();
   });
