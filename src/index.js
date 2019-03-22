@@ -12,7 +12,7 @@ import schema from './options.json';
 export default function loader(source) {
   const options = getOptions(this) || {};
 
-  validateOptions(schema, options, 'Loader');
+  validateOptions(schema, options, 'JSON5 Loader');
 
   let value;
 
