@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.0.0"></a>
+# [2.0.0](https://github.com/webpack-contrib/json5-loader/compare/v2.0.0-beta.0...v2.0.0) (2019-03-22)
+
+### Features
+
+* update `json5` to `2.1.0` version
+* use `JSON5.stringify` for output
+
+
+### Bug Fixes
+
+* avoid swallowing JSON5 error output ([#34](https://github.com/webpack-contrib/json5-loader/issues/34)) ([d050827](https://github.com/webpack-contrib/json5-loader/commit/d050827))
+* support for `Infinity` && `NaN` ([#26](https://github.com/webpack-contrib/json5-loader/issues/26)) ([5a8ca43](https://github.com/webpack-contrib/json5-loader/commit/5a8ca43))
+* fix output `\u2028\u2029` characters
+
+### BREAKING CHANGES
+
+* drop support for webpack < 4
+* drop support for node < 6.9
+* update `json5` to `2.1.0` version
+* use `JSON5.stringify` for output
+
+
+
 <a name="2.0.0-beta.0"></a>
 # [2.0.0-beta.0](https://github.com/webpack-contrib/json5-loader/compare/v1.0.1...v2.0.0-beta.0) (2017-05-01)
 
