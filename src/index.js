@@ -2,9 +2,6 @@
   MIT License http://www.opensource.org/licenses/mit-license.php
   Author Tobias Koppers @sokra
 */
-
-import util from 'util';
-
 import JSON5 from 'json5';
 
 import { getOptions } from 'loader-utils';
@@ -25,5 +22,11 @@ export default function loader(source) {
     this.emitError(error);
   }
 
-  return `module.exports = ${util.inspect(value, { depth: null })}`;
+  value = value
+    ? JSON5.stringify(value, null)
+        .replace(/\u2028/g, '\\u2028')
+        .replace(/\u2029/g, '\\u2029')
+    : source;
+
+  return `module.exports = ${value}`;
 }
