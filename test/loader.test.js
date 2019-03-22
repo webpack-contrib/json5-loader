@@ -3,13 +3,11 @@ import JSON5 from 'json5';
 import loader from '../src';
 
 describe('loader', () => {
-  it('should export the loader', (done) => {
+  it('should export the loader', () => {
     expect(loader).toBeInstanceOf(Function);
-
-    done();
   });
 
-  it('should handle valid JSON5', (done) => {
+  it('should handle valid JSON5', () => {
     const json5 = `{
   // comments
   unquoted: 'and you can quote me on that',
@@ -36,11 +34,9 @@ No \\\\n's!",
     const js = eval(content);
 
     expect(JSON5.stringify(js)).toEqual(JSON5.stringify(JSON5.parse(json5)));
-
-    done();
   });
 
-  it('should invalid characters', (done) => {
+  it('should invalid characters', () => {
     const json5 = `{foo: '\u2028\u2029'}`;
     const emitError = jest.fn();
     const content = loader.call(
@@ -56,11 +52,9 @@ No \\\\n's!",
     const js = eval(content);
 
     expect(JSON5.stringify(js)).toEqual(JSON5.stringify(JSON5.parse(json5)));
-
-    done();
   });
 
-  it('should preserve Infinity', (done) => {
+  it('should preserve Infinity', () => {
     const json5 = '{to : Infinity}';
     const content = loader.call({}, json5);
 
@@ -70,11 +64,9 @@ No \\\\n's!",
     const js = eval(content);
 
     expect(JSON5.stringify(js)).toEqual(JSON5.stringify(JSON5.parse(json5)));
-
-    done();
   });
 
-  it('should preserve -Infinity', (done) => {
+  it('should preserve -Infinity', () => {
     const json5 = '{to : -Infinity}';
     const content = loader.call({}, json5);
 
@@ -84,11 +76,9 @@ No \\\\n's!",
     const js = eval(content);
 
     expect(JSON5.stringify(js)).toEqual(JSON5.stringify(JSON5.parse(json5)));
-
-    done();
   });
 
-  it('should preserve null', (done) => {
+  it('should preserve null', () => {
     const json5 = '{null : null}';
     const content = loader.call({}, json5);
 
@@ -98,11 +88,9 @@ No \\\\n's!",
     const js = eval(content);
 
     expect(JSON5.stringify(js)).toEqual(JSON5.stringify(JSON5.parse(json5)));
-
-    done();
   });
 
-  it('should preserve NaN', (done) => {
+  it('should preserve NaN', () => {
     const json5 = '{nan : NaN}';
     const content = loader.call({}, '{nan : NaN}');
 
@@ -112,11 +100,9 @@ No \\\\n's!",
     const js = eval(content);
 
     expect(JSON5.stringify(js)).toEqual(JSON5.stringify(JSON5.parse(json5)));
-
-    done();
   });
 
-  it('should handle invalid JSON5', (done) => {
+  it('should handle invalid JSON5', () => {
     const brokenJson5 = '{broken: json5}';
     const emitError = jest.fn();
 
@@ -128,7 +114,5 @@ No \\\\n's!",
     );
 
     expect(emitError).toHaveBeenCalledWith(expect.any(SyntaxError));
-
-    done();
   });
 });
