@@ -103,8 +103,8 @@ Please take a moment to read our contributing guidelines if you haven't yet done
 [node-url]: https://nodejs.org
 [deps]: https://david-dm.org/webpack-contrib/json5-loader.svg
 [deps-url]: https://david-dm.org/webpack-contrib/json5-loader
-[tests]: https://img.shields.io/travis/webpack-contrib/json5-loader.svg
-[tests-url]: https://travis-ci.org/webpack-contrib/json5-loader
+[tests]: https://dev.azure.com/webpack-contrib/json5-loader/_apis/build/status/webpack-contrib.json5-loader?branchName=master
+[tests-url]: https://dev.azure.com/webpack-contrib/json5-loader/_build/latest?definitionId=2&branchName=master
 [cover]: https://codecov.io/gh/webpack-contrib/json5-loader/branch/master/graph/badge.svg
 [cover-url]: https://codecov.io/gh/webpack-contrib/json5-loader
 [chat]: https://img.shields.io/badge/gitter-webpack%2Fwebpack-brightgreen.svg

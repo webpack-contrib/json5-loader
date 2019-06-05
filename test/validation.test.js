@@ -1,7 +1,7 @@
 import loader from '../src';
 
 it('validation', async () => {
-  const json5 = '{foo: "bar"}';
+  const json5 = '{ foo: "bar" }';
   const emitError = jest.fn();
 
   expect(() => {
