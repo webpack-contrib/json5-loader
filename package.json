@@ -1,6 +1,6 @@
 {
   "name": "json5-loader",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "json5 loader module for webpack",
   "license": "MIT",
   "repository": "webpack-contrib/json5-loader",
