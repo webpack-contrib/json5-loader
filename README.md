@@ -29,7 +29,7 @@ $ npm install json5-loader --save-dev
 
 You can use the loader either:
 
-- by configuring the `json5-loader` in the `module.loaders` object of the webpack configuration, or
+- by configuring the `json5-loader` in the `module.rules` object of the webpack configuration, or
 - by directly using the `json5-loader!` prefix to the require statement.
 
 Suppose we have the following `json5` file:
@@ -44,7 +44,7 @@ Suppose we have the following `json5` file:
 }
 ```
 
-### Usage with preconfigured loader
+### Usage with preconfigured rule
 
 **webpack.config.js**
 
@@ -56,11 +56,12 @@ module.exports = {
     /* ... */
   },
   module: {
-    loaders: [
+    rules: [
       {
         // make all files ending in .json5 use the `json5-loader`
         test: /\.json5$/,
-        loader: 'json5-loader',
+        use: 'json5-loader',
+        type: 'javascript/auto'
       },
     ],
   },
