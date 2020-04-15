@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.0.0](https://github.com/webpack-contrib/json5-loader/compare/v3.0.0...v4.0.0) (2020-04-15)
+
+
+### Features
+
+* implement the `esModule` option
+
+### ⚠ BREAKING CHANGES
+
+* minimum required nodejs version is `10.13.0`
+* use ES module syntax by default
+
+
 ## [3.0.0](https://github.com/webpack-contrib/json5-loader/compare/v2.0.0...v3.0.0) (2019-06-05)
 
 
