@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`"esModule" option should work with "Boolean" value equal "false": errors 1`] = `Array []`;
+
+exports[`"esModule" option should work with "Boolean" value equal "false": result 1`] = `
+Object {
+  "NaN": NaN,
+  "andIn": Array [
+    "arrays",
+  ],
+  "andTrailing": 8675309,
+  "backwardsCompatible": "with JSON",
+  "foo": "  ",
+  "hexadecimal": 912559,
+  "leadingDecimalPoint": 0.8675309,
+  "lineBreaks": "Look, Mom! No \\\\n's!",
+  "null": null,
+  "positiveSign": 1,
+  "singleQuotes": "I can use \\"double quotes\\" here",
+  "to": Infinity,
+  "to2": -Infinity,
+  "trailingComma": "in objects",
+  "unquoted": "and you can quote me on that",
+}
+`;
+
+exports[`"esModule" option should work with "Boolean" value equal "false": warnings 1`] = `Array []`;
+
+exports[`"esModule" option should work with "Boolean" value equal "true": errors 1`] = `Array []`;
+
+exports[`"esModule" option should work with "Boolean" value equal "true": result 1`] = `
+Object {
+  "NaN": NaN,
+  "andIn": Array [
+    "arrays",
+  ],
+  "andTrailing": 8675309,
+  "backwardsCompatible": "with JSON",
+  "foo": "  ",
+  "hexadecimal": 912559,
+  "leadingDecimalPoint": 0.8675309,
+  "lineBreaks": "Look, Mom! No \\\\n's!",
+  "null": null,
+  "positiveSign": 1,
+  "singleQuotes": "I can use \\"double quotes\\" here",
+  "to": Infinity,
+  "to2": -Infinity,
+  "trailingComma": "in objects",
+  "unquoted": "and you can quote me on that",
+}
+`;
+
+exports[`"esModule" option should work with "Boolean" value equal "true": warnings 1`] = `Array []`;
+
+exports[`"esModule" option should work without value: errors 1`] = `Array []`;
+
+exports[`"esModule" option should work without value: result 1`] = `
+Object {
+  "NaN": NaN,
+  "andIn": Array [
+    "arrays",
+  ],
+  "andTrailing": 8675309,
+  "backwardsCompatible": "with JSON",
+  "foo": "  ",
+  "hexadecimal": 912559,
+  "leadingDecimalPoint": 0.8675309,
+  "lineBreaks": "Look, Mom! No \\\\n's!",
+  "null": null,
+  "positiveSign": 1,
+  "singleQuotes": "I can use \\"double quotes\\" here",
+  "to": Infinity,
+  "to2": -Infinity,
+  "trailingComma": "in objects",
+  "unquoted": "and you can quote me on that",
+}
+`;
+
+exports[`"esModule" option should work without value: warnings 1`] = `Array []`;

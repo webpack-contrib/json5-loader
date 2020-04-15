@@ -37,51 +37,79 @@ Suppose we have the following `json5` file:
 **file.json5**
 
 ```json5
-// file.json5
 {
   env: 'production',
   passwordStrength: 'strong',
 }
 ```
 
-### Usage with preconfigured rule
-
 **webpack.config.js**
 
 ```js
-// webpack.config.js
 module.exports = {
-  entry: './index.js',
-  output: {
-    /* ... */
-  },
   module: {
     rules: [
       {
-        // make all files ending in .json5 use the `json5-loader`
-        test: /\.json5$/,
-        use: 'json5-loader',
-        type: 'javascript/auto'
+        test: /\.json5$/i,
+        loader: 'json5-loader',
+        type: 'javascript/auto',
       },
     ],
   },
 };
 ```
 
-```js
-// index.js
-var appConfig = require('./appData.json5');
-// or, in ES6
-// import appConfig from './appData.json5'
+## Options
 
-console.log(appConfig.env); // 'production'
+|            Name             |    Type     | Default | Description            |
+| :-------------------------: | :---------: | :-----: | :--------------------- |
+| **[`esModule`](#esmodule)** | `{Boolean}` | `true`  | Uses ES modules syntax |
+
+### `esModule`
+
+Type: `Boolean`
+Default: `true`
+
+There are some cases in which using ES modules is beneficial, like in the case of [module concatenation](https://webpack.js.org/plugins/module-concatenation-plugin/) and [tree shaking](https://webpack.js.org/guides/tree-shaking/).
+
+You can enable a ES module syntax using:
+
+**webpack.config.js**
+
+```js
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.json5$/i,
+        loader: 'json5-loader',
+        options: {
+          esModule: false,
+        },
+        type: 'javascript/auto',
+      },
+    ],
+  },
+};
 ```
+
+## Examples
 
 ### Usage with require statement loader prefix
 
+**file.json5**
+
+```json5
+{
+  env: 'production',
+  passwordStrength: 'strong',
+}
+```
+
+**index.js**
+
 ```js
-var appConfig = require('json5-loader!./appData.json5');
-// returns the content as json parsed object
+import appConfig from 'json5-loader!./file.json5';
 
 console.log(appConfig.env); // 'production'
 ```
@@ -104,8 +132,8 @@ Please take a moment to read our contributing guidelines if you haven't yet done
 [node-url]: https://nodejs.org
 [deps]: https://david-dm.org/webpack-contrib/json5-loader.svg
 [deps-url]: https://david-dm.org/webpack-contrib/json5-loader
-[tests]: https://dev.azure.com/webpack-contrib/json5-loader/_apis/build/status/webpack-contrib.json5-loader?branchName=master
-[tests-url]: https://dev.azure.com/webpack-contrib/json5-loader/_build/latest?definitionId=2&branchName=master
+[tests]: https://github.com/webpack-contrib/json5-loader/workflows/json5-loader/badge.svg
+[tests-url]: https://github.com/webpack-contrib/json5-loader/actions
 [cover]: https://codecov.io/gh/webpack-contrib/json5-loader/branch/master/graph/badge.svg
 [cover-url]: https://codecov.io/gh/webpack-contrib/json5-loader
 [chat]: https://img.shields.io/badge/gitter-webpack%2Fwebpack-brightgreen.svg

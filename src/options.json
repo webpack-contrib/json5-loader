@@ -1,4 +1,10 @@
 {
   "type": "object",
+  "properties": {
+    "esModule": {
+      "description": "Use the ES modules syntax (https://github.com/webpack-contrib/css-loader#esmodule).",
+      "type": "boolean"
+    }
+  },
   "additionalProperties": false
 }

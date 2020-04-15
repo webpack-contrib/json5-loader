@@ -2,8 +2,8 @@
 
 exports[`loader should handle invalid JSON5: errors 1`] = `
 Array [
-  [ModuleError: Module Error (replaced/path):
-JSON5: invalid character 'j' at 1:10],
+  "ModuleError: Module Error (from \`replaced original path\`):
+JSON5: invalid character 'j' at 1:10",
 ]
 `;
 
@@ -11,6 +11,26 @@ exports[`loader should handle invalid JSON5: warnings 1`] = `Array []`;
 
 exports[`loader should handle valid JSON5: errors 1`] = `Array []`;
 
-exports[`loader should handle valid JSON5: module 1`] = `"module.exports = {unquoted:'and you can quote me on that',singleQuotes:'I can use \\"double quotes\\" here',lineBreaks:\\"Look, Mom! No \\\\\\\\n's!\\",hexadecimal:912559,leadingDecimalPoint:0.8675309,andTrailing:8675309,positiveSign:1,trailingComma:'in objects',andIn:['arrays'],backwardsCompatible:'with JSON',to:Infinity,to2:-Infinity,null:null,NaN:NaN,foo:'\\\\u2028\\\\u2029'}"`;
+exports[`loader should handle valid JSON5: result 1`] = `
+Object {
+  "NaN": NaN,
+  "andIn": Array [
+    "arrays",
+  ],
+  "andTrailing": 8675309,
+  "backwardsCompatible": "with JSON",
+  "foo": "  ",
+  "hexadecimal": 912559,
+  "leadingDecimalPoint": 0.8675309,
+  "lineBreaks": "Look, Mom! No \\\\n's!",
+  "null": null,
+  "positiveSign": 1,
+  "singleQuotes": "I can use \\"double quotes\\" here",
+  "to": Infinity,
+  "to2": -Infinity,
+  "trailingComma": "in objects",
+  "unquoted": "and you can quote me on that",
+}
+`;
 
 exports[`loader should handle valid JSON5: warnings 1`] = `Array []`;
