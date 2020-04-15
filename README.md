@@ -37,7 +37,6 @@ Suppose we have the following `json5` file:
 **file.json5**
 
 ```json5
-// file.json5
 {
   env: 'production',
   passwordStrength: 'strong',
@@ -49,7 +48,6 @@ Suppose we have the following `json5` file:
 **webpack.config.js**
 
 ```js
-// webpack.config.js
 module.exports = {
   entry: './index.js',
   output: {
@@ -61,15 +59,16 @@ module.exports = {
         // make all files ending in .json5 use the `json5-loader`
         test: /\.json5$/,
         use: 'json5-loader',
-        type: 'javascript/auto'
+        type: 'javascript/auto',
       },
     ],
   },
 };
 ```
 
+**index.js**
+
 ```js
-// index.js
 var appConfig = require('./appData.json5');
 // or, in ES6
 // import appConfig from './appData.json5'
@@ -78,6 +77,8 @@ console.log(appConfig.env); // 'production'
 ```
 
 ### Usage with require statement loader prefix
+
+**index.js**
 
 ```js
 var appConfig = require('json5-loader!./appData.json5');
@@ -104,8 +105,8 @@ Please take a moment to read our contributing guidelines if you haven't yet done
 [node-url]: https://nodejs.org
 [deps]: https://david-dm.org/webpack-contrib/json5-loader.svg
 [deps-url]: https://david-dm.org/webpack-contrib/json5-loader
-[tests]: https://dev.azure.com/webpack-contrib/json5-loader/_apis/build/status/webpack-contrib.json5-loader?branchName=master
-[tests-url]: https://dev.azure.com/webpack-contrib/json5-loader/_build/latest?definitionId=2&branchName=master
+[tests]: https://github.com/webpack-contrib/json5-loader/workflows/json5-loader/badge.svg
+[tests-url]: https://github.com/webpack-contrib/json5-loader/actions
 [cover]: https://codecov.io/gh/webpack-contrib/json5-loader/branch/master/graph/badge.svg
 [cover-url]: https://codecov.io/gh/webpack-contrib/json5-loader
 [chat]: https://img.shields.io/badge/gitter-webpack%2Fwebpack-brightgreen.svg

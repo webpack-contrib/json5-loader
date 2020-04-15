@@ -2,7 +2,7 @@ import path from 'path';
 
 import del from 'del';
 import webpack from 'webpack';
-import MemoryFS from 'memory-fs';
+import { createFsFromVolume, Volume } from 'memfs';
 
 const moduleConfig = (config) => {
   return {
@@ -59,7 +59,8 @@ function compile(fixture, config = {}, options = {}) {
   const compiler = webpack(config);
 
   if (!options.output) {
-    compiler.outputFileSystem = new MemoryFS();
+    compiler.outputFileSystem = createFsFromVolume(new Volume());
+    compiler.outputFileSystem.join = path.join.bind(path);
   }
 
   return new Promise((resolve, reject) =>
