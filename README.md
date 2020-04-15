@@ -43,22 +43,15 @@ Suppose we have the following `json5` file:
 }
 ```
 
-### Usage with preconfigured rule
-
 **webpack.config.js**
 
 ```js
 module.exports = {
-  entry: './index.js',
-  output: {
-    /* ... */
-  },
   module: {
     rules: [
       {
-        // make all files ending in .json5 use the `json5-loader`
-        test: /\.json5$/,
-        use: 'json5-loader',
+        test: /\.json5$/i,
+        loader: 'json5-loader',
         type: 'javascript/auto',
       },
     ],
@@ -66,23 +59,57 @@ module.exports = {
 };
 ```
 
-**index.js**
+## Options
+
+|            Name             |    Type     | Default | Description            |
+| :-------------------------: | :---------: | :-----: | :--------------------- |
+| **[`esModule`](#esmodule)** | `{Boolean}` | `true`  | Uses ES modules syntax |
+
+### `esModule`
+
+Type: `Boolean`
+Default: `true`
+
+There are some cases in which using ES modules is beneficial, like in the case of [module concatenation](https://webpack.js.org/plugins/module-concatenation-plugin/) and [tree shaking](https://webpack.js.org/guides/tree-shaking/).
+
+You can enable a ES module syntax using:
+
+**webpack.config.js**
 
 ```js
-var appConfig = require('./appData.json5');
-// or, in ES6
-// import appConfig from './appData.json5'
-
-console.log(appConfig.env); // 'production'
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.json5$/i,
+        loader: 'json5-loader',
+        options: {
+          esModule: false,
+        },
+        type: 'javascript/auto',
+      },
+    ],
+  },
+};
 ```
+
+## Examples
 
 ### Usage with require statement loader prefix
 
+**file.json5**
+
+```json5
+{
+  env: 'production',
+  passwordStrength: 'strong',
+}
+```
+
 **index.js**
 
 ```js
-var appConfig = require('json5-loader!./appData.json5');
-// returns the content as json parsed object
+import appConfig from 'json5-loader!./file.json5';
 
 console.log(appConfig.env); // 'production'
 ```

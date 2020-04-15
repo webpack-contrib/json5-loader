@@ -10,9 +10,12 @@ import validateOptions from 'schema-utils';
 import schema from './options.json';
 
 export default function loader(source) {
-  const options = getOptions(this) || {};
+  const options = getOptions(this);
 
-  validateOptions(schema, options, 'JSON5 Loader');
+  validateOptions(schema, options, {
+    name: 'JSON5 Loader',
+    baseDataPath: 'options',
+  });
 
   let value;
 
@@ -28,5 +31,8 @@ export default function loader(source) {
         .replace(/\u2029/g, '\\u2029')
     : source;
 
-  return `module.exports = ${value}`;
+  const esModule =
+    typeof options.esModule !== 'undefined' ? options.esModule : true;
+
+  return `${esModule ? 'export default' : 'module.exports ='} ${value}`;
 }
