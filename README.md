@@ -1,3 +1,9 @@
+# DEPREACTED
+
+https://github.com/webpack/webpack/tree/master/examples/custom-json-modules
+
+---
+
 <div align="center">
   <img width="200" height="200"
     src="https://cdn.rawgit.com/json5/json5-logo/master/json5-logo.svg">
